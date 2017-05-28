@@ -20,5 +20,3 @@ with open(LASTIP, 'r+') as l:
                 for host in line[2:]:
                     print('Updating host "{host}" on domain "{domain}" with ip "{ip}"'.format(domain=line[0], host=host, ip=ip_current))
                     urlopen(URL.format(domain=line[0], password=line[1], host=host, ip=ip_current)).read()
-    else:
-        print('Not updating. IP unchanged')
